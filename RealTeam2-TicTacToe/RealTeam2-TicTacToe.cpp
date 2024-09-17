@@ -151,6 +151,10 @@ void checkWin(char board[3][3])
     {
         cout << board[0][0] << " wins!";
     }
+    else
+    {
+        cout << "Draw!";
+    }
 }
 
 //Demonstration of the TurnTracker class, for testing purposes.
