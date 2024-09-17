@@ -27,6 +27,8 @@ public:
         }
     }
 
+    
+
     //MUTATORS
 
     //Switch the turn between 'X' and 'O'
@@ -64,10 +66,41 @@ private:
     char turn;
 };
 
+//this is to display the board and its updates, I didn't want to put it in the class without your input-nicole
+void displayBoard(char board[3][3]) {
+    cout << endl;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << board[i][j];
+            if (j < 2) {
+                cout << "  | ";
+            }
+        }
+        if (i < 2) {
+            cout << "\n------------\n";
+        }
+    }
+
+}
+
 //Demonstration of the TurnTracker class, for testing purposes.
 //(Remove this when implementing the full game of Tic Tac Toe.)
 int main()
 {
+    //welcome message
+    cout << "Welcome to Tic-Tac-Toe" << endl;
+    //starting board just for display purposes and to help make displayBoard (can be taken out later)
+    cout << "_|_|_\n" << "_|_|_\n" << " | | " << endl;
+    //attempt at making initial board that can change
+    char board[3][3] = { {' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '} };
+
+    //for updating the board later ex ask player for which column and which row
+    int row;
+    int col;
+
+    //displaying initial board (this should be put in loop later so that board can update
+    displayBoard(board);
+
     TurnTracker tt1;
     cout << tt1.getTurn() << endl; //should output X
     tt1.switchTurn();
