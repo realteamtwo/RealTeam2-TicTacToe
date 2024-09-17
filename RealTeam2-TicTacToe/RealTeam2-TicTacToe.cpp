@@ -38,7 +38,7 @@ public:
             turn = 'O';
         }
         else if (turn == 'O') {
-            turn = 'X';
+turn = 'X';
         }
         else {
             cout << "Error in turnTracker function switchTurn(): The current turn value was " << turn << " (expected 'X' or 'O')" << endl;
@@ -81,6 +81,76 @@ void displayBoard(char board[3][3]) {
         }
     }
 
+}
+
+//Function to check if someone has won the game
+//Implemented by Dylan
+void checkWin(char board[3][3])
+{
+    //Check if there is a win in row 1
+    if ((board[0][0] == 'X' && board[0][1] == 'X' && board[0][2] == 'X')
+        || (board[0][0] == 'x' && board[0][1] == 'x' && board[0][2] == 'x')
+        || (board[0][0] == 'O' && board[0][1] == 'O' && board[0][2] == 'O')
+        || (board[0][0] == 'o' && board[0][1] == 'o' && board[0][2] == 'o'))
+    {
+        cout << board[0][0] << " wins!";
+    }
+    //Check if there is a win in row 2
+    else if ((board[1][0] == 'X' && board[1][1] == 'X' && board[1][2] == 'X')
+        || (board[1][0] == 'x' && board[1][1] == 'x' && board[1][2] == 'x')
+        || (board[1][0] == 'O' && board[1][1] == 'O' && board[1][2] == 'O')
+        || (board[1][0] == 'o' && board[1][1] == 'o' && board[1][2] == 'o'))
+    {
+        cout << board[1][0] << " wins!";
+    }
+    //Check if there is a win in row 3
+    else if ((board[2][0] == 'X' && board[2][1] == 'X' && board[2][2] == 'X')
+        || (board[2][0] == 'x' && board[2][1] == 'x' && board[2][2] == 'x')
+        || (board[2][0] == 'O' && board[2][1] == 'O' && board[2][2] == 'O')
+        || (board[2][0] == 'o' && board[2][1] == 'o' && board[2][2] == 'o'))
+    {
+        cout << board[2][0] << " wins!";
+    }
+    //Check if there is a win in column 1
+    else if ((board[0][0] == 'X' && board[1][0] == 'X' && board[2][0] == 'X')
+        || (board[0][0] == 'x' && board[1][0] == 'x' && board[2][0] == 'x')
+        || (board[0][0] == 'O' && board[1][0] == 'O' && board[2][0] == 'O')
+        || (board[0][0] == 'o' && board[1][0] == 'o' && board[2][0] == 'o'))
+    {
+        cout << board[0][0] << " wins!";
+    }
+    //Check if there is a win in column 2
+    else if ((board[0][1] == 'X' && board[1][1] == 'X' && board[2][1] == 'X')
+        || (board[0][1] == 'x' && board[1][1] == 'x' && board[2][1] == 'x')
+        || (board[0][1] == 'O' && board[1][1] == 'O' && board[2][1] == 'O')
+        || (board[0][1] == 'o' && board[1][1] == 'o' && board[2][1] == 'o'))
+    {
+        cout << board[0][1] << " wins!";
+    }
+    //Check if there is a win in column 3
+    else if ((board[0][2] == 'X' && board[1][2] == 'X' && board[2][2] == 'X')
+        || (board[0][2] == 'x' && board[1][2] == 'x' && board[2][2] == 'x')
+        || (board[0][2] == 'O' && board[1][2] == 'O' && board[2][2] == 'O')
+        || (board[0][2] == 'o' && board[1][2] == 'o' && board[2][2] == 'o'))
+    {
+        cout << board[0][2] << " wins!";
+    }
+    //Check if there is a win in left to right diagonal
+    else if ((board[0][0] == 'X' && board[1][1] == 'X' && board[2][2] == 'X')
+        || (board[0][0] == 'x' && board[1][1] == 'x' && board[2][2] == 'x')
+        || (board[0][0] == 'O' && board[1][1] == 'O' && board[2][2] == 'O')
+        || (board[0][0] == 'o' && board[1][1] == 'o' && board[2][2] == 'o'))
+    {
+        cout << board[0][0] << " wins!";
+    }
+    //Check if there is a win in right to left diagonal
+    else if ((board[0][2] == 'X' && board[1][1] == 'X' && board[2][0] == 'X')
+        || (board[0][2] == 'x' && board[1][1] == 'x' && board[2][0] == 'x')
+        || (board[0][2] == 'O' && board[1][1] == 'O' && board[2][0] == 'O')
+        || (board[0][2] == 'o' && board[1][1] == 'o' && board[2][0] == 'o'))
+    {
+        cout << board[0][0] << " wins!";
+    }
 }
 
 //Demonstration of the TurnTracker class, for testing purposes.
