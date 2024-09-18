@@ -4,6 +4,44 @@
 #include <iostream>
 using namespace std;
 
+int X = 0;
+int O = 0;
+
+// Initillization Header
+void displayBoard(char board[3][3]);
+
+void GameEnd(char board[3][3])
+{
+
+    string input;
+    cout << "Wins for X: " << X << endl;
+    cout << "Wins for O: " << O;
+    cout << "Would you like to Play Again Y/N: ";
+    cin >> input;
+
+    // Exit out of Game (Eddie)
+    if ((input == "N") || (input == "n"))
+    {
+        return;
+    }
+
+    // Restarts the Game (Eddie)
+    else if ((input == "Y") || (input == "y"))
+    {
+        board[0][0] = ' ';
+        board[0][1] = ' ';
+        board[0][2] = ' ';
+        board[1][0] = ' ';
+        board[1][1] = ' ';
+        board[1][2] = ' ';
+        board[2][0] = ' ';
+        board[2][1] = ' ';
+        board[2][2] = ' ';
+
+        displayBoard(board);
+    }
+}
+
 //TurnTracker class to keep track of whose turn it is in Tic-Tac-Toe.
 //Written by Joseph Miele.
 class TurnTracker
@@ -94,6 +132,18 @@ void checkWin(char board[3][3])
         || (board[0][0] == 'o' && board[0][1] == 'o' && board[0][2] == 'o'))
     {
         cout << board[0][0] << " wins!";
+
+        if (board[0][0] == 'X' || board[0][0] == 'x')
+        {
+            X++;
+        }
+
+        else if (board[0][0] == 'O' || board[0][0] == 'o')
+        {
+            O++;
+        }
+
+        GameEnd(board);
     }
     //Check if there is a win in row 2
     else if ((board[1][0] == 'X' && board[1][1] == 'X' && board[1][2] == 'X')
@@ -102,6 +152,18 @@ void checkWin(char board[3][3])
         || (board[1][0] == 'o' && board[1][1] == 'o' && board[1][2] == 'o'))
     {
         cout << board[1][0] << " wins!";
+
+        if (board[1][0] == 'X' || board[1][0] == 'x')
+        {
+            X++;
+        }
+
+        else if (board[1][0] == 'O' || board[1][0] == 'o')
+        {
+            O++;
+        }
+
+        GameEnd(board);
     }
     //Check if there is a win in row 3
     else if ((board[2][0] == 'X' && board[2][1] == 'X' && board[2][2] == 'X')
@@ -110,6 +172,18 @@ void checkWin(char board[3][3])
         || (board[2][0] == 'o' && board[2][1] == 'o' && board[2][2] == 'o'))
     {
         cout << board[2][0] << " wins!";
+
+        if (board[2][0] == 'X' || board[2][0] == 'x')
+        {
+            X++;
+        }
+
+        else if (board[2][0] == 'O' || board[2][0] == 'o')
+        {
+            O++;
+        }
+
+        GameEnd(board);
     }
     //Check if there is a win in column 1
     else if ((board[0][0] == 'X' && board[1][0] == 'X' && board[2][0] == 'X')
@@ -118,6 +192,18 @@ void checkWin(char board[3][3])
         || (board[0][0] == 'o' && board[1][0] == 'o' && board[2][0] == 'o'))
     {
         cout << board[0][0] << " wins!";
+
+        if (board[0][0] == 'X' || board[0][0] == 'x')
+        {
+            X++;
+        }
+
+        else if (board[0][0] == 'O' || board[0][0] == 'o')
+        {
+            O++;
+        }
+
+        GameEnd(board);
     }
     //Check if there is a win in column 2
     else if ((board[0][1] == 'X' && board[1][1] == 'X' && board[2][1] == 'X')
@@ -126,6 +212,18 @@ void checkWin(char board[3][3])
         || (board[0][1] == 'o' && board[1][1] == 'o' && board[2][1] == 'o'))
     {
         cout << board[0][1] << " wins!";
+
+        if (board[0][1] == 'X' || board[0][1] == 'x')
+        {
+            X++;
+        }
+
+        else if (board[0][1] == 'O' || board[0][1] == 'o')
+        {
+            O++;
+        }
+
+        GameEnd(board);
     }
     //Check if there is a win in column 3
     else if ((board[0][2] == 'X' && board[1][2] == 'X' && board[2][2] == 'X')
@@ -134,6 +232,18 @@ void checkWin(char board[3][3])
         || (board[0][2] == 'o' && board[1][2] == 'o' && board[2][2] == 'o'))
     {
         cout << board[0][2] << " wins!";
+
+        if (board[0][2] == 'X' || board[0][2] == 'x')
+        {
+            X++;
+        }
+
+        else if (board[0][2] == 'O' || board[0][2] == 'o')
+        {
+            O++;
+        }
+
+        GameEnd(board);
     }
     //Check if there is a win in left to right diagonal
     else if ((board[0][0] == 'X' && board[1][1] == 'X' && board[2][2] == 'X')
@@ -142,6 +252,18 @@ void checkWin(char board[3][3])
         || (board[0][0] == 'o' && board[1][1] == 'o' && board[2][2] == 'o'))
     {
         cout << board[0][0] << " wins!";
+
+        if (board[0][0] == 'X' || board[0][0] == 'x')
+        {
+            X++;
+        }
+
+        else if (board[0][0] == 'O' || board[0][0] == 'o')
+        {
+            O++;
+        }
+
+        GameEnd(board);
     }
     //Check if there is a win in right to left diagonal
     else if ((board[0][2] == 'X' && board[1][1] == 'X' && board[2][0] == 'X')
@@ -149,7 +271,18 @@ void checkWin(char board[3][3])
         || (board[0][2] == 'O' && board[1][1] == 'O' && board[2][0] == 'O')
         || (board[0][2] == 'o' && board[1][1] == 'o' && board[2][0] == 'o'))
     {
-        cout << board[0][0] << " wins!";
+        cout << board[0][2] << " wins!";
+        
+        if (board[0][2] == 'X' || board[0][2] == 'x')
+        {
+            X++;
+        }
+
+        else if (board[0][2] == 'O' || board[0][2] == 'o')
+        {
+            O++;
+        }
+        GameEnd(board);
     }
     else if (board[0][0] != ' ' && board[0][1] != ' ' && board[0][2] != ' ' && board[1][0] != ' ' && board[1][1] != ' '
         && board[1][2] != ' ' && board[2][0] != ' ' && board[2][1] != ' ' && board[2][2] != ' ')
@@ -194,7 +327,9 @@ int main()
     cout << tt3.getTurn() << endl; //should output X
     tt3.switchTurn();
     cout << tt3.getTurn() << endl; //should output O
+    
 }
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
